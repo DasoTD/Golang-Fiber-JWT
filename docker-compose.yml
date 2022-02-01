@@ -9,4 +9,4 @@ services:
       POSTGRES_USER: root
       POSTGRES_DB: authserver
     ports:
-      - "5432:5432"
+      - "3030:3030"
