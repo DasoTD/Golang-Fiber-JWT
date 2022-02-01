@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/gofiber/fiber/v2 v2.25.0
+	github.com/gofiber/jwt/v3 v3.2.3
 	github.com/golang-jwt/jwt/v4 v4.2.0
 	github.com/lib/pq v1.10.2
 	xorm.io/xorm v1.2.5

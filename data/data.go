@@ -11,11 +11,11 @@ type User struct {
 	Id       string
 	Name     string
 	Email    string
-	Password string `json: "-"`
+	Password string
 }
 
 func CreateDBEngine() (*xorm.Engine, error) {
-	connectioninfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", "localhost", 5432, "root", "password", "altserver")
+	connectioninfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", "localhost", 5432, "root", "password", "authserver")
 	engine, err := xorm.NewEngine("postgres", connectioninfo)
 	if err != nil {
 		return nil, err

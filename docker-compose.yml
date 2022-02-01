@@ -7,6 +7,6 @@ services:
     environment: 
       POSTGRES_PASSWORD: password
       POSTGRES_USER: root
-      POSTGRES_DB: altserver
+      POSTGRES_DB: authserver
     ports:
-      - "8080:8080"
+      - "5432:5432"

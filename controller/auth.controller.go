@@ -23,7 +23,7 @@ func CreateJWTToken(user data.User) (string, int64, error) {
 	return t, exp, nil
 }
 func SignUp(c *fiber.Ctx) error {
-	var post models.SignupRequest
+	post := new(models.SignupRequest)
 	if err := c.BodyParser(post); err != nil {
 		return err
 	}
@@ -45,7 +45,7 @@ func SignUp(c *fiber.Ctx) error {
 		panic(err)
 	}
 
-	_, err = engine.Insert(&user)
+	_, err = engine.Insert(user)
 	if err != nil {
 		return err
 	}
