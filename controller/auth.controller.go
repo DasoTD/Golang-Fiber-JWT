@@ -57,7 +57,7 @@ func SignUp(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{"token": token, "exp": exp, "user": user})
 }
 
-func login(c *fiber.Ctx) error {
+func Login(c *fiber.Ctx) error {
 	var post models.LoginRequest
 	if err := c.BodyParser(post); err != nil {
 		return err

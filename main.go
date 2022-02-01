@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-
+	"github.com/DasoTD/fiber-jwt/controller"
 	"github.com/DasoTD/fiber-jwt/data"
 	"github.com/gofiber/fiber/v2"
 )
@@ -12,16 +11,16 @@ func main() {
 
 	_, err := data.CreateDBEngine()
 	if err != nil {
-		panic(err)
+		//panic(err)
 	}
 
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World 👋!")
 	})
 
-	//app.Post("/signup")
+	app.Post("/signup", controller.SignUp)
 
-	//app.Post("/login")
+	app.Post("/login", controller.Login)
 
 	app.Get("/private", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{"success": true, "path": "private"})
@@ -34,5 +33,4 @@ func main() {
 	if err := app.Listen(":8080"); err != nil {
 		panic(err)
 	}
-	fmt.Println("hello ghdhgdhjf")
 }
